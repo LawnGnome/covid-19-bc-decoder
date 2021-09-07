@@ -66,10 +66,11 @@ function App() {
           <h2>About this site</h2>
           <p>
             This is a very quick and dirty site to decode and display the
-            information encoded in a BC Vaccine Card QR code.
+            information encoded in a BC Vaccine Card.
           </p>
           <p>
             Your QR code and health information are not transmitted anywhere.
+            (The coders among you can verify that using the source code below.)
           </p>
           <p>
             The source code for this site is hosted{" "}
