@@ -32,6 +32,9 @@ const Decoder: React.FunctionComponent<Props> = ({ code }) => {
   const raw = decodeNumericalCode(code);
 
   // We can decode the signature using jws.
+  //
+  // TODO: verify this against the known public key of BC (and other
+  // provinces?).
   const sig = jws.decode(raw);
 
   // Unfortunately, the jws library doesn't handle binary payloads properly, so
