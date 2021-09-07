@@ -6,7 +6,7 @@ body {
   --nav-bg: #222;
   --nav-fg: white;
   --nav-size: 2rem;
-  --nav-height: calc(1.5 * --nav-size);
+  --nav-height: calc(1.5 * var(--nav-size));
 }
 
 .content {
