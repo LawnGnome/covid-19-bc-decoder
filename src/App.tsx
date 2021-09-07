@@ -13,7 +13,7 @@ enum AppState {
   ABOUT,
 }
 
-function App() {
+const App: React.FunctionComponent<{}> = () => {
   const [code, setCode] = useState<string | undefined>(undefined);
   const [state, setState] = useState(AppState.SCANNING);
 
@@ -120,6 +120,6 @@ function App() {
       )}
     </>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,28 @@
+.signature {
+  font-size: 133%;
+  font-weight: bold;
+  min-height: 3em;
+}
+
+.verifying {
+  color: darkgoldenrod;
+  display: flex;
+  align-items: center;
+}
+
+.success {
+  color: green;
+  display: flex;
+  align-items: center;
+}
+
+.failure {
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: block;
+  padding-right: 0.5em;
+}

@@ -1,10 +1,11 @@
 import React from "react";
 
-import jws from "jws";
 import pako from "pako";
 import { R4 } from "@ahryman40k/ts-fhir-types";
+
 import Patient from "./Patient";
 import Immunisation from "./Immunisation";
+import Signature from "./Signature";
 
 const decodeNumericalCode = (code: string) => {
   let acc: string | undefined = undefined;
@@ -31,14 +32,9 @@ const Decoder: React.FunctionComponent<Props> = ({ code }) => {
   if (code.startsWith("shc:/")) code = code.substr(5);
   const raw = decodeNumericalCode(code);
 
-  // We can decode the signature using jws.
-  //
-  // TODO: verify this against the known public key of BC (and other
-  // provinces?).
-  const sig = jws.decode(raw);
-
-  // Unfortunately, the jws library doesn't handle binary payloads properly, so
-  // we'll just decode it by hand.
+  // Unfortunately, the standard JWS libraries don't handle binary payloads
+  // properly, so we'll just decode it by hand. This will break if we ever get
+  // QR codes with multiple parts.
   const payload = JSON.parse(
     pako.inflateRaw(Buffer.from(raw.split(".")[1], "base64"), {
       to: "string",
@@ -71,6 +67,7 @@ const Decoder: React.FunctionComponent<Props> = ({ code }) => {
 
     return (
       <>
+        <Signature signature={raw} />
         {patient && <Patient patient={patient} />}
         {immunisations.length > 0 && (
           <>
