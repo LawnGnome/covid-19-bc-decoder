@@ -61,6 +61,13 @@ const Immunisation: React.FunctionComponent<Props> = ({ immunisation }) => {
         value={decodeVaccineCodes(immunisation.vaccineCode.coding)}
       />
       <ListItem label="Lot number" value={immunisation.lotNumber} />
+      <ListItem
+        label="Location"
+        value={immunisation.performer
+          ?.map((performer) => performer.actor.display)
+          .filter((performer) => performer !== undefined)
+          .join("; ")}
+      />
     </dl>
   );
 };
