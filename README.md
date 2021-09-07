@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# `covid-19-bc-decoder`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This SPA decodes QR codes obtained from BC's COVID-19 vaccine card programme and displays the information within.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), so if you know how to manage a TypeScript CRA project, you should be at home. Everything below is its usual boilerplate.
 
 ## Available Scripts
 
