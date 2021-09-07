@@ -71,7 +71,7 @@ const Decoder: React.FunctionComponent<Props> = ({ code }) => {
         {patient && <Patient patient={patient} />}
         {immunisations.length > 0 && (
           <>
-            <h2>Immunisations</h2>
+            <h2>Vaccinations</h2>
             {immunisations.map((imm) => (
               <Immunisation immunisation={imm} />
             ))}
