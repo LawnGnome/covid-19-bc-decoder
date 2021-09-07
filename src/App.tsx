@@ -30,10 +30,14 @@ function App() {
   }, []);
 
   useLayoutEffect(() => {
-    document.documentElement.style.setProperty(
-      "--vh",
-      `${window.innerHeight}px`
-    );
+    const getSize = () =>
+      document.documentElement.style.setProperty(
+        "--vh",
+        `${window.innerHeight}px`
+      );
+
+    getSize();
+    window.onresize = getSize;
   });
 
   return (

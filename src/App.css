@@ -11,8 +11,9 @@ body {
 
 .content {
   overflow: auto;
-  margin: 0.5em;
-  padding-bottom: var(--nav-height);
+  height: calc(var(--vh, 100vh) - var(--nav-height));
+  padding: 0.5em;
+  box-sizing: border-box;
 }
 
 #results dl {
@@ -48,7 +49,7 @@ body {
 }
 
 #scanner {
-  height: calc(var(--vh, 100vh) - 2em);
+  height: calc(var(--vh, 100vh) - var(--nav-height));
   width: 100vw;
   position: flex;
   overflow: hidden;
